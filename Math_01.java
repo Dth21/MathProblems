@@ -13,7 +13,7 @@ public class Math_01{
         final String ANSI_WHITE = "\u001B[37m";
 
         Scanner userChoice = new Scanner(System.in);
-        System.out.println("How can I help you? /n Chose a number: \n Choose 1 if you need to calculate the factorial of a number. \n Chose 2 if you need to do permutations. \n Chose 3 if you need to do combinations");
+        System.out.println("How can I help you? /n Chose a number: \n Choose 1 if you need to calculate the factorial of a number. \n Chose 2 if you need to do permutations. \n Chose 3 if you need to do combinations.");
         int usrcho = userChoice.nextInt();
         switch(usrcho){
             // factorial of a number
@@ -35,26 +35,26 @@ public class Math_01{
             System.out.println("So... It's permutations time!\n");
             Scanner firstpObj = new Scanner(System.in);
             System.out.println(ANSI_CYAN + "Enter the total number of elements:" + ANSI_RESET);
-            int firstn = firstpObj.nextInt();
-            int firstfactorial=0;
-            int secn = firstn;
-            for(int i=1;i<secn;i++){ // calculate n!
+            long firstn = firstpObj.nextLong();
+            long firstfactorial=0;
+            long secn = firstn;
+            for(long i=1;i<secn;i++){ // calculate n!
                 firstfactorial=i*firstn;
                 firstn=firstfactorial;
             }
             Scanner secondpObj = new Scanner(System.in);
             System.out.println( ANSI_CYAN + "Insert the number of selected elements to be arranged in a specific order:" + ANSI_RESET);
-            int firstk = secondpObj.nextInt();
-            int firstdiff=secn-firstk;
-            int secdiff=firstdiff;
-            int secfactorial=0;
-            for(int j=1; j<secdiff;j++){ // calculate (n-k)!
+            long firstk = secondpObj.nextLong();
+            long firstdiff=secn-firstk;
+            long secdiff=firstdiff;
+            long secfactorial=0;
+            for(long j=1; j<secdiff;j++){ // calculate (n-k)!
                 secfactorial=j*firstdiff;
                 firstdiff=secfactorial;
             }
             System.out.println("\n" + ANSI_GREEN + secn + "! = " + firstfactorial);
             System.out.println("(" + secn + " - " + firstk +  ")! = " + secdiff + "! = " + secfactorial);
-            int p=firstfactorial/secfactorial;
+            long p=firstfactorial/secfactorial;
             System.out.println("P(" + secn + "," + firstk + ")= " + p);
             System.out.println(ANSI_YELLOW + "\nNumber of possible arrangements based on " + secn + " elements and shortlisted by your criteria is " +  p + "." + ANSI_RESET);
             break;
@@ -64,31 +64,31 @@ public class Math_01{
             System.out.println("So... It's combinations time!\n");
             Scanner firstcObj = new Scanner(System.in);
             System.out.println(ANSI_CYAN + "Enter the total number of elements:" + ANSI_RESET);
-            int firstn1 = firstcObj.nextInt(); // insert n
-            int firstfactorial1=0;
-            int secn1 = firstn1;
-            for(int a=1;a<secn1;a++){ // calculate n!
+            long firstn1 = firstcObj.nextLong(); // insert n
+            long firstfactorial1=0;
+            long secn1 = firstn1;
+            for(long a=1;a<secn1;a++){ // calculate n!
                 firstfactorial1=a*firstn1;
                 firstn1=firstfactorial1;
             }
             Scanner secondcObj = new Scanner(System.in);
             System.out.println( ANSI_CYAN + "Insert the number of selected elements:" + ANSI_RESET);
-            int firstk1 = secondcObj.nextInt(); // insert k
-            int seck1=firstk1;
-            int factorial1=0;
-            for(int t=1;t<seck1;t++){ // calculate k!
+            long firstk1 = secondcObj.nextLong(); // insert k
+            long seck1=firstk1;
+            long factorial1=0;
+            for(long t=1;t<seck1;t++){ // calculate k!
                 factorial1=t*firstk1;
                 firstk1=factorial1;
             }
-            int firstdiff1=secn1-seck1; // n-k
-            int secdiff1=firstdiff1;
-            int secfactorial1=0;
-            for(int b=1; b<secdiff1;b++){ // calculate (n-k)!
+            long firstdiff1=secn1-seck1; // n-k
+            long secdiff1=firstdiff1;
+            long secfactorial1=0;
+            for(long b=1; b<secdiff1;b++){ // calculate (n-k)!
                 secfactorial1=b*firstdiff1;
                 firstdiff1=secfactorial1;
             }
-            int p1=secfactorial1*factorial1;
-            int p2=firstfactorial1/p1;
+            long p1=secfactorial1*factorial1;
+            long p2=firstfactorial1/p1;
             System.out.println("\n" + ANSI_GREEN + secn1 + "! = " + firstfactorial1);
             System.out.println(seck1 + "!= " + factorial1);
             System.out.println("(" + secn1 + " - " + seck1 +  ")! = " + secdiff1 + "! = " + secfactorial1);
