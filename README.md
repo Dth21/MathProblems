@@ -1,2 +1,2 @@
 # MathProblems
-Solving math problems
+Math problems solved with the help of Java.

@@ -3,18 +3,14 @@ import java.util.Scanner;
 public class Math_01{
     public static void main(String[] elisei){
         final String ANSI_RESET = "\u001B[0m";
-        final String ANSI_BLACK = "\u001B[30m";
-        final String ANSI_RED = "\u001B[31m";
         final String ANSI_GREEN = "\u001B[32m";
         final String ANSI_YELLOW = "\u001B[33m";
-        final String ANSI_BLUE = "\u001B[34m";
-        final String ANSI_PURPLE = "\u001B[35m";
         final String ANSI_CYAN = "\u001B[36m";
-        final String ANSI_WHITE = "\u001B[37m";
 
         Scanner userChoice = new Scanner(System.in);
         System.out.println("How can I help you? /n Chose a number: \n Choose 1 if you need to calculate the factorial of a number. \n Chose 2 if you need to do permutations. \n Chose 3 if you need to do combinations.");
         int usrcho = userChoice.nextInt();
+        userChoice.close();
         switch(usrcho){
             // factorial of a number
             case 1:
@@ -27,7 +23,7 @@ public class Math_01{
                 factorial3 = factnumber1*m;
                 factnumber1=factorial3;
             }
-                System.out.println(ANSI_YELLOW + factnumber2 + "!= " + factorial3 + ANSI_RESET);
+            System.out.println(ANSI_YELLOW + factnumber2 + "!= " + factorial3 + ANSI_RESET);
             break;
 
             // permutations code
